@@ -1,12 +1,12 @@
 # MalFunc Library 🛠️
 
-A versatile Python utility library designed for robust data manipulation, numeric operations, and recursive structure traversal. Developed as a collaborative project for the **Computer Programming** course.
+A versatile Python utility library designed for robust data manipulation, numeric operations, and recursive structure traversal. Developed as a collaborative **University Data Science** project.
 
 ## 👥 The Development Team
 
 | Member | GitHub Username | Core Responsibilities |
 | :--- | :--- | :--- |
-| **Faizan Toheed** (Leader) | [@faizantoheed456](https://github.com/faizantoheed456) | `get_number()`, `get_sum()`, `get_indices()` |
+| **Faizan Toheed** | [@faizantoheed456](https://github.com/faizantoheed456) | `get_number()`, `get_sum()`, `get_indices()` |
 | **Muhammad Usman** | [@dominator959](https://github.com/dominator959) | `get_mul()`, `vectorize_mul()` |
 | **Shah Faisal Ilyas** | [@Faisalilyas17](https://github.com/Faisalilyas17) | `vectorize_sum()`, `get_unique_order_list()` |
 | **Muhammad Rohan Jabbar** | [@mrj-005](https://github.com/mrj-005) | `get_flat()`, `get_dtypes()` |

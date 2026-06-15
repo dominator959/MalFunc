@@ -1,6 +1,6 @@
 # MalFunc Project Documentation
-**Course:** Computer Programming  
-**Project Leader:** Faizan Toheed  
+**Course:** University Data Science Project  
+**Team Members:** Faizan Toheed, Muhammad Usman, Shah Faisal Ilyas, Muhammad Rohan Jabbar  
 
 ---
 
