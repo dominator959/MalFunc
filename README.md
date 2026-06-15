@@ -1,65 +1,75 @@
-# MalFunc Library
+# MalFunc Library 🛠️
 
-A versatile Python utility library designed for robust data manipulation, numeric operations, and nested structure traversal. This project was developed as a collaborative school project.
+A versatile Python utility library designed for robust data manipulation, numeric operations, and recursive structure traversal. Developed as a collaborative project for the **Computer Programming** course.
 
-## 👥 The Team & Contributions
+## 👥 The Development Team
 
-| Member | GitHub Username | Assigned Functions |
+| Member | GitHub Username | Core Responsibilities |
 | :--- | :--- | :--- |
 | **Muhammad Usman** (Leader) | [@dominator959](https://github.com/dominator959) | `get_number()`, `get_sum()`, `get_indices()`, `get_mul()`, `vectorize_mul()` |
-| **Faizan Toheed** | [@faizantoheed456](https://github.com/faizantoheed456) | *[Reserved for assigned functions]* |
 | **Shah Faisal Ilyas** | [@Faisalilyas17](https://github.com/Faisalilyas17) | `vectorize_sum()`, `get_unique_order_list()` |
 | **Muhammad Rohan Jabbar** | [@mrj-005](https://github.com/mrj-005) | `get_flat()`, `get_dtypes()` |
+| **Faizan Toheed** | [@faizantoheed456](https://github.com/faizantoheed456) | *[Assigned Operations]* |
 
 ---
 
-## 🛠️ Modules & Functions
+## 📚 Detailed Function Reference
 
 ### 1. Operations Module (`ops.py`)
-Focuses on numeric data processing and robust user input.
+This module handles core mathematical and input-validation logic.
 
 *   **`get_number(prompt, to_int=False)`**
-    *   Safely prompts the user for numeric input.
-    *   Uses `try-except` blocks to handle invalid characters and re-prompt the user until a valid number is entered.
+    *   **Logic:** Uses an infinite loop and `try-except` blocks to filter out non-numeric input.
+    *   **Feature:** Re-prompts the user until valid data is entered, ensuring program stability.
 *   **`get_sum(data)`**
-    *   Recursively calculates the sum of a list.
-    *   Ignores non-numeric items (with a warning) and returns a list of sums for every nested level found.
-*   **`get_mul()`** *(Planned)* - Handles robust multiplication logic.
-*   **`vectorize_mul()`** *(Planned)* - Applies multiplication across vector-like structures.
-*   **`vectorize_sum()`** *(Planned)* - Applies summation across vector-like structures.
+    *   **Logic:** A recursive function that traverses nested lists.
+    *   **Feature:** Ignores non-numeric elements (with notification) and returns a collection of sums for each nesting level encountered.
+*   **`get_mul(data)`**
+    *   **Goal:** Robust multiplication logic for numeric lists, handling non-numeric types gracefully.
+*   **`vectorize_sum(data)` / `vectorize_mul(data)`**
+    *   **Goal:** Applies element-wise operations across structures, simulating vectorized math without external libraries like NumPy.
 
 ### 2. Utilities Module (`utils.py`)
-Focuses on structure traversal and metadata.
+This module provides structural analysis and list manipulation tools.
 
 *   **`get_indices(data)`**
-    *   Recursively maps every item in a list (flat or nested) to its positional "index path" (e.g., `[1, 0]`).
-    *   Works regardless of data type.
-*   **`get_unique_order_list()`** *(Planned)* - Returns unique items while preserving original order.
-*   **`get_flat()`** *(Planned)* - Flattens deeply nested lists into a single level.
-*   **`get_dtypes()`** *(Planned)* - Analyzes and returns the data types present within a structure.
+    *   **Logic:** Recursively tracks the positional path of every element in a structure.
+    *   **Feature:** Returns a detailed map of "index paths" (e.g., `[0, 2, 1]`) for both items and sub-lists.
+*   **`get_unique_order_list(data)`**
+    *   **Goal:** Removes duplicates from a list while strictly maintaining the original order of first appearance.
+*   **`get_flat(data)`**
+    *   **Goal:** Recursively flattens any level of nested lists into a single-dimensional list.
+*   **`get_dtypes(data)`**
+    *   **Goal:** Scans a collection and returns a list or dictionary of the specific data types found (int, float, str, etc.).
 
 ---
 
-## 🚀 Installation & Usage
+## 🚀 Getting Started
 
-To use this library in your project, clone the repository:
-
+### Installation
+Clone the repository to your local machine:
 ```bash
 git clone https://github.com/dominator959/MalFunc.git
 ```
 
-Import the modules into your Python script:
-
+### Basic Usage
 ```python
 from malfunc import ops, utils
 
-# Example: Safe numeric input
-weight = ops.get_number("What is your weight?")
+# Securely get an integer from a user
+age = ops.get_number("Enter your age:", to_int=True)
 
-# Example: Get indices of a nested list
-data = ["a", ["b", "c"]]
-map = utils.get_indices(data)
+# Deeply analyze nested indices
+data = [1, [2, 3], 4]
+paths = utils.get_indices(data)
 ```
+
+---
+
+## 📝 Project Goals
+- **Robustness:** Using `try-except` and type-checking to prevent runtime crashes.
+- **Recursion:** Mastering nested data traversal without depth limitations.
+- **Modularity:** Separating logic into clean, reusable modules (`ops` and `utils`).
 
 ## 📜 License
 This project is licensed under the MIT License.
