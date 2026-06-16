@@ -68,18 +68,19 @@ Calculating the product of a list that may contain strings or other invalid data
 
 ---
 
-## 5. vectorize_mul(data)
+## 5. vectorize_mul(a, b)
 **Developer:** Muhammad Usman  
 
 ### Problem Statement
-Applying a multiplier to every element in a list (vectorization) usually requires external libraries like NumPy.
+Multiplying two arrays or lists element-wise (vectorized multiplication) is not natively supported by Python lists without external libraries like NumPy.
 
 ### Algorithm Approach
-1.  **Input:** Takes a list and a multiplier.
-2.  **Map:** Iterate through the list and multiply every numeric element by the scalar.
-3.  **Return:** Return a new list containing the modified values.
+1.  **Validate:** Ensure both inputs are lists and are of equal length.
+2.  **Calculate:** Loop through the zipped elements of both lists. If nested list elements are found, recursively vectorize them.
+3.  **Return:** Return a new list containing the element-wise products.
 
 ---
+
 
 ## 6. vectorize_sum(data)
 **Developer:** Shah Faisal Ilyas  
