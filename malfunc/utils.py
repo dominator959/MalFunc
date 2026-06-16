@@ -26,3 +26,36 @@ def get_indices(data, current_path=None):
             results.extend(get_indices(item, new_path))
             
     return results
+
+
+def vectorize_mul(a, b):
+    """
+    Performs element-wise multiplication of two numeric lists.
+    If lists are nested, it recursively multiplies them element-wise.
+    Raises ValueError if lengths at any nesting level differ.
+    
+    Args:
+        a (list): First list.
+        b (list): Second list.
+        
+    Returns:
+        list: A list containing element-wise products.
+    """
+    if not isinstance(a, list) or not isinstance(b, list):
+        raise TypeError("Both inputs must be lists.")
+    if len(a) != len(b):
+        raise ValueError("Lists must be of equal length for vectorization.")
+        
+    results = []
+    for x, y in zip(a, b):
+        if isinstance(x, list) and isinstance(y, list):
+            results.append(vectorize_mul(x, y))
+        elif isinstance(x, list) or isinstance(y, list):
+            raise TypeError("Cannot vectorize elements of mismatching nested structures.")
+        else:
+            if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+                raise TypeError("Elements to multiply must be numeric.")
+            results.append(x * y)
+            
+    return results
+
