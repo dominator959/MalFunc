@@ -24,8 +24,6 @@ This module handles core mathematical and input-validation logic.
     *   **Logic:** A recursive function that traverses nested lists, ignoring non-numeric elements.
 *   **`get_mul(data)`** (Assigned to Muhammad Usman)
     *   **Goal:** Robust multiplication logic for numeric lists.
-*   **`vectorize_mul(a, b)`** (Assigned to Muhammad Usman)
-    *   **Goal:** Multiplies two structures/lists element-wise (recursively if nested).
 *   **`vectorize_sum(data)`** (Assigned to Shah Faisal Ilyas)
     *   **Goal:** Applies element-wise summation across structures.
 
@@ -33,8 +31,11 @@ This module handles core mathematical and input-validation logic.
 ### 2. Utilities Module (`utils.py`)
 This module provides structural analysis and list manipulation tools.
 
+*   **`vectorize_mul(a, b)`** (Assigned to Muhammad Usman)
+    *   **Goal:** Multiplies two structures/lists element-wise (recursively if nested).
 *   **`get_indices(data)`** (Implemented by Faizan Toheed)
     *   **Logic:** Recursively tracks the positional path of every element in a structure.
+
 *   **`get_unique_order_list(data)`** (Assigned to Shah Faisal Ilyas)
     *   **Goal:** Removes duplicates while preserving the original order.
 *   **`get_flat(data)`** (Assigned to Muhammad Rohan Jabbar)
