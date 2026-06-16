@@ -48,3 +48,39 @@ def get_sum(data, results=None):
             
     results.append(current_sum)
     return results
+
+
+def get_mul(data):
+    """
+    Calculates the product of all numeric items in a list, ignoring non-numeric values.
+    Recursively processes nested lists and returns a list of products.
+    
+    Args:
+        data (list): The list containing numbers, strings, or nested lists.
+        
+    Returns:
+        list: A list of products (one for each nested list and the main list).
+    """
+    results = []
+    
+    def _recurse(lst):
+        current_product = 1
+        has_numeric = False
+        for item in lst:
+            if isinstance(item, (int, float)):
+                current_product *= item
+                has_numeric = True
+            elif isinstance(item, list):
+                _recurse(item)
+            else:
+                print(f"Notice: '{item}' is not a number and was ignored.")
+        if not has_numeric:
+            current_product = 0
+        results.append(current_product)
+        
+    _recurse(data)
+    return results
+
+
+
+
