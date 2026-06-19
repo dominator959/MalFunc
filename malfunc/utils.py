@@ -1,33 +1,3 @@
-def get_indices(data, current_path=None):
-    """
-    Returns a list of dictionaries containing every item and its positional index path.
-    Works for flat and nested lists.
-    
-    Args:
-        data (list): The list to traverse.
-        current_path (list, optional): The path of indices leading to the current list.
-        
-    Returns:
-        list: A list of dicts with 'path' and 'value' keys.
-    """
-    if current_path is None:
-        current_path = []
-    
-    results = []
-    for index, item in enumerate(data):
-        # Create the specific path for this item
-        new_path = current_path + [index]
-        
-        # Add the item and its path to results
-        results.append({"path": new_path, "value": item})
-        
-        # If it's a list, dive deeper
-        if isinstance(item, list):
-            results.extend(get_indices(item, new_path))
-            
-    return results
-
-
 def vectorize_mul(a, b):
     """
     Performs element-wise multiplication of two numeric lists.
@@ -59,3 +29,64 @@ def vectorize_mul(a, b):
             
     return results
 
+
+def get_unique_order_list(data):
+    """
+    Removes duplicate items from a list while preserving the original order
+    in which they first appeared.
+    
+    Args:
+        data (list): The list to deduplicate. Items must be hashable.
+        
+    Returns:
+        list: A new list with duplicates removed, original order preserved.
+    """
+    unique_items = []
+    seen = set()
+    
+    for item in data:
+        if item not in seen:
+            unique_items.append(item)
+            seen.add(item)
+            
+    return unique_items
+
+
+def get_flat(data):
+    """
+    Recursively flattens a nested list into a single-level list.
+    
+    Args:
+        data (list): A list that may contain nested lists at any depth.
+        
+    Returns:
+        list: A single-level (flat) list containing all elements in order.
+    """
+    flat_list = []
+    
+    for item in data:
+        if isinstance(item, list):
+            flat_list.extend(get_flat(item))
+        else:
+            flat_list.append(item)
+            
+    return flat_list
+
+
+def get_dtypes(data):
+    """
+    Scans a collection and counts the occurrences of each data type present.
+    
+    Args:
+        data (list): The collection to analyze.
+        
+    Returns:
+        dict: A mapping of type name (str) to the number of occurrences (int).
+    """
+    counts = {}
+    
+    for item in data:
+        type_name = type(item).__name__
+        counts[type_name] = counts.get(type_name, 0) + 1
+        
+    return counts
